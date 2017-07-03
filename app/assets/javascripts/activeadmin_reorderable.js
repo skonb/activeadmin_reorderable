@@ -46,6 +46,9 @@ $.fn.reorderable = function (opts) {
 
         $rows.each(function () {
             $(this).find('.position').text(index($(this)));
+            if (typeof $(this).find('.position').val === 'function') {
+                $(this).find('.position').val(index($(this)));
+            }
         });
     }
 
